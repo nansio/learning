@@ -1,46 +1,38 @@
 <template>
   <div id="app">
-    <el-tabs v-model="activeTabName"
-      type="border-card"
-      @tab-click="tabClick"
-      tab-position="left"
-      >
-      <el-tab-pane
-        key=Tabs
-        name=tabs>
-        <span slot="label">
-          <i class="el-icon-date"></i>
-          我的行程
-        </span>
-        my journey
-      </el-tab-pane>
-    </el-tabs>
+    <el-container>
+        <el-header class="heady" style="height:30px;">
+          初识ElementUI
+        </el-header>
+        <el-container class="mainy">
+          <el-aside width="200px" class="sideNav">
+            <side-nav />
+          </el-aside>
+          <el-main class="content">
+            <contenty />
+          </el-main>
+        </el-container>
+        <el-footer class="footy">
+          <footy />
+        </el-footer>
+        
+    </el-container>
     
   </div>
 </template>
 
 <script>
 
+import SideNav from './components/sideNav'
+import Contenty from './components/content'
+import Footy from './components/footy'
+
 export default {
   name: 'App',
-  data(){
-    return {
-      items: [
-        {
-          key: 'Tabs', label: 'Tabs标签页', name: 'tabs'
-        },
-        {
-          key: 'ToolTip', label: 'ToolTip文字提示', name: 'tooltips'
-        },
-        {
-          key: 'NavMenu', label: 'NavMenu导航菜单', name: 'navmenu'
-        },
-      ],
-      activeTabName: 'tabs'
-    }
-  },
   components: {
-    
+    SideNav,
+    Contenty,
+    Footy
   },
   methods: {
     tabClick(tab){
@@ -51,11 +43,28 @@ export default {
 </script>
 
 <style>
+html,body{
+  margin: 0; padding: 0;
+  height: 100%;
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  border: 1px dashed red; 
+  height: 100%;
+}
+.heady{
   text-align: center;
-  color: #2c3e50;
+  line-height: 30px;
+  color:red;
+}
+.el-container{
+  height: 100%;
+}
+.mainy{
+  height: calc(100% - 120px);
+  border: 2px solid purple;
+}
+.sideNav{
+  border:2px dotted brown;
 }
 </style>
