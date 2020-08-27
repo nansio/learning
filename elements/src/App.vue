@@ -23,9 +23,9 @@
 
 <script>
 
-import SideNav from './components/sideNav'
-import Contenty from './components/content'
-import Footy from './components/footy'
+import SideNav from './sideNav'
+import Contenty from './content'
+import Footy from './footy'
 
 export default {
   name: 'App',
@@ -63,6 +63,9 @@ html,body{
 .mainy{
   height: calc(100% - 120px);
   border: 2px solid purple;
+}
+.content{
+  margin:0; padding: 0;
 }
 .sideNav{
   border:2px dotted brown;
