@@ -1,19 +1,19 @@
 <template>
   <div class="contentVue">
-      <layout-el />
+      <layout />
   </div>
 </template>
 
 <script>
 
-import LayoutEl from './components/LayoutEl';
+import Layout from './components/Layout';
 
 export default {
   data(){
 
   },
   components: {
-    LayoutEl,
+    Layout,
   },
   computed: {
 
