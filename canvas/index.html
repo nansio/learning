@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片验证码</title>
+</head>
+
+<body>
+    <div class="canvas-container" style="height: 300px;width: 500px;border:5px dashed red;">
+        <canvas id="vimg" height="300" width="500" style="border:2px solid green;"></canvas>
+    </div>
+    <div class="input">
+        <input type="text" placeholder="请输入图片验证码" name="vcode" id="vcode" style="margin-top:21px;height: 30px;">
+        <input type="button" value="验证" id="vbtn" style="height: 35px; width: 50px;">
+    </div>
+
+    <script>
+        window.onload = function () {
+            let canvas = document.getElementById('vimg')
+            let context = canvas.getContext("2d")
+            let button = document.getElementById('vbtn')
+            let input = document.getElementById('vcode')
+            let vcodeStr
+            draw();
+            // add eventlistener to canvas
+
+            function change () { // func to change verification code
+                context.clearRect(0, 0, 500, 300)
+                draw();
+            }
+            canvas.onclick = change
+            // generate random color for latter use
+            function getRandomColor() {
+                let r = Math.floor(Math.random() * 256)
+                let g = Math.floor(Math.random() * 256)
+                let b = Math.floor(Math.random() * 256)
+                return "rgb(" + r + "," + g + "," + b + ")"
+            }
+
+            function draw() {
+                context.strokeRect(0, 0, 500, 300)
+                const codes = [
+                    "0", "1", "2", "3", "4", "5", "6", "7", "8", "9",
+                    "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k",
+                    "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w",
+                    "x", "y", "z"
+                ];
+                let vcodeout = []
+                for (let i = 0; i < 4; i++) { // generate four characters on canvas
+                    let x = 100 + i * 100 // space between letters on x-axis set to 20
+                    let y = 150 + 20 * Math.random() // randomly set between 20-30 on y-axis
+                    let randomIndex = Math.floor(Math.random() * codes.length) // random index for selecting character
+                    let randomLetter = codes[randomIndex]
+                    context.font = "bold 120px Times New Roman"
+                    context.fillStyle = getRandomColor()
+                    context.translate(x, y)
+                    let deg = 90 * Math.random() * Math.PI / 180
+                    context.rotate(deg)
+                    context.fillText(randomLetter, 0, 0)
+                    context.rotate(-deg)
+                    context.translate(-x, -y)
+                    vcodeout[i] = randomLetter
+                }
+                vcodeStr = vcodeout.reduce((prev, current) => {
+                    return prev + current
+                })
+                console.log(vcodeStr);
+
+                // draw line for interferring
+                for (let i = 0; i < 50; i++) {
+                    context.beginPath()
+                    context.moveTo(Math.random() * 500, Math.random() * 300)
+                    context.lineTo(Math.random() * 500, Math.random() * 300)
+                    context.strokeStyle = getRandomColor()
+                    context.stroke()
+                }
+                // draw dots for interferring
+                for (var i = 0; i < 100; i++) {
+                    context.beginPath();
+                    var x = Math.random() * 500;
+                    var y = Math.random() * 300;
+                    context.moveTo(x, y);
+                    context.lineTo(x + 1, y + 1);
+                    context.strokeStyle=getRandomColor();
+                    context.stroke();
+                }
+            }
+
+            button.onclick = function () {
+                let text = input.value
+                console.log(text)
+                alert(text === vcodeStr ? '验证通过' : '验证失败')
+                change()
+            }
+        }
+    </script>
+</body>
+
+</html>
