@@ -2,6 +2,8 @@
   <div class="contentVue">
       <layout />
       <formy />
+      <carousel />
+      <show-state />
   </div>
 </template>
 
@@ -9,6 +11,8 @@
 
 import Layout from './components/Layout';
 import Form from './components/Form'
+import Carousel from './components/carousel'
+import ShowState from './components/showState'
 
 export default {
   data(){
@@ -18,7 +22,9 @@ export default {
   },
   components: {
     Layout,
-    Formy: Form
+    Formy: Form,
+    Carousel,
+    ShowState
   },
   computed: {
 
