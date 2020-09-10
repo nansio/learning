@@ -48,7 +48,7 @@ export default {
     computed: {
         // mapState返回的也是一个对象 使用展开运算符将其混入外部对象
         ...mapState({
-            count: state => state.count
+            count: state => state.number.count
         }),
         // 在组件中 通过属性访问getters 需要放在computed属性中 并且以函数的方式返回
         // countPlus1(){
@@ -67,7 +67,7 @@ export default {
     },
     methods: {
         increment(){
-            this.$store.commit('increment')
+            this.$store.commit('number/increment')
         },
         getUserWithId() {
             if(this.$store.getters.getUser(this.uid)){
@@ -79,32 +79,32 @@ export default {
         increseN(){
             // this.$store.commit('increseN',{ value: this.step}) // commit 带有payload对象的mutation
             this.$store.commit({ // 通过对象风格方式提交commit时 整个对象都作为payload传入个mutation 此时handleer不需要更改
-                type: 'increseN',
+                type: 'number/increseN',
                 value: this.step // 传入的值 只需要传vlaue 而不是一个新的对象
             })
         },
         ...mapMutations([ //将mutations map到methods中来 函数名相同
-            'increment'
+            'number/increment'
         ]),
         // ...mapMutations({ // 对象的方式 可以映射
         //     getUserWithId: 'getUser' // mapMutations 支持载荷payload getUserWithId(payload) 映射为 this.$store.commit('getUser', payload)
         // })
         plusSync(){ // 可以这么写 但我注释掉了 因为下面 通过mapAcitons map过来了 一样的函数名
-            this.$store.dispatch('increseAsync')
+            this.$store.dispatch('number/increseAsync')
         },
         plusSyncWithPayload(){ // dispatch action 同样支持payload
             // this.$store.dispatch('increseAsyncWithPayload',{
             //     delay: this.delay
             // })
             this.$store.dispatch({ // 同样可以以对象的方式分发
-                type: 'increseAsyncWithPayload',
+                type: 'number/increseAsyncWithPayload',
                 delay: this.delay*1000
             }).then(()=>{
                 this.$message.success('dispatch success')
             })
         },
         ...mapActions({ // mapActions和mapMutations一样 支持map数组 或对象来更改函数名
-            plusSync: 'increseAsync'
+            plusSync: 'number/increseAsync'
         })
     }
 }
