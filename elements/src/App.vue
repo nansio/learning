@@ -1,20 +1,21 @@
 <template>
   <div id="app">
     <el-container>
-        <el-header class="heady" style="height:30px;">
-          初识ElementUI
-        </el-header>
-        <el-container class="mainy">
-          <el-aside width="200px" class="sideNav">
+        <el-aside width="200px" class="sideNav">
             <side-nav />
           </el-aside>
+        <el-container class="mainy">
+          <el-header class="heady" style="height:30px;">
+            supercalifragilistic'expiali'docious
+          </el-header>
           <el-main class="content">
             <contenty />
           </el-main>
+          <el-footer class="footy">
+            <footy />
+          </el-footer>
         </el-container>
-        <el-footer class="footy">
-          <footy />
-        </el-footer>
+        
         
     </el-container>
     
@@ -49,25 +50,33 @@ html,body{
 }
 #app {
   box-sizing: border-box;
-  border: 1px dashed red; 
-  height: 100%;
+  /* border: 1px dashed red;  */
+  height: 100vh;
 }
 .heady{
   text-align: center;
   line-height: 30px;
-  color:red;
+  color:white;
+  background-color: #545c64;
+
 }
 .el-container{
   height: 100%;
 }
 .mainy{
-  height: calc(100% - 120px);
-  border: 2px solid purple;
+  /* border: 2px solid purple; */
 }
 .content{
   margin:0; padding: 0;
 }
 .sideNav{
-  border:2px dotted brown;
+  /* border:2px dotted brown; */
+  background-color: #545c64;
+  margin-right: 1px;
+}
+.footy{
+  /* border: 3px dashed black; */
+  text-align: center;
+  line-height: 60px;
 }
 </style>
