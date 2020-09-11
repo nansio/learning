@@ -4,6 +4,7 @@
       <formy />
       <carousel />
       <show-state />
+      <cascader />
   </div>
 </template>
 
@@ -13,6 +14,7 @@ import Layout from './components/Layout';
 import Form from './components/Form'
 import Carousel from './components/carousel'
 import ShowState from './components/showState'
+import Cascader from './components/cascader'
 
 export default {
   data(){
@@ -24,7 +26,8 @@ export default {
     Layout,
     Formy: Form,
     Carousel,
-    ShowState
+    ShowState,
+    Cascader
   },
   computed: {
 
