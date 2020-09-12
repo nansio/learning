@@ -13,6 +13,7 @@ export default {
     data() {
         return {
             optionProps: {
+                expandTrigger: 'hover',
                 value: 'id',
                 label: 'name',
                 children: 'children'
@@ -24,7 +25,7 @@ export default {
                         id: 11, name: '大兴区',
                         children: [
                             {id: 111, name: '亦庄'},
-                            {id: 112, name: 'somewhere'}
+                            {id: 112, name: 'somewhere', disabled: true}
                         ]
                     }]
                 },
