@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS实现二级菜单下拉</title>
+    <style>
+        .btn{
+            height: 30px; width: 100px;
+            background-color:darkgoldenrod;
+            font-size-adjust: 18px; line-height: 30px;text-align:center; color: aliceblue;
+        }
+        ul{
+            list-style-type: none;
+            margin: 0; padding:0;width: 100px;
+            max-height: 0;display: inline-block;
+            transition: max-height 0.25s ease-out;
+            display: none;
+        }
+        li{
+            border: 1px solid red;margin: 0;padding:0;
+        }
+        .btn:hover .submenu{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="btn">更多信息</div>
+    <div class="submenu">
+        <ul>
+            <li>个人中心</li>
+            <li>我的博客</li>
+            <li>设置</li>
+            <li>退出登录</li>
+            <li>注销</li>
+        </ul>
+    </div>
+</body>
+</html
