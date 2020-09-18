@@ -28,7 +28,9 @@
         <!-- 2级菜单 Form 表单 -->
         <el-submenu index="2-2">
             <template slot="title">Form</template>
-            <el-menu-item index="3-9">el-form</el-menu-item>
+            <el-menu-item index="3-9">
+              <router-link to="/form">el-form</router-link>
+            </el-menu-item>
         </el-submenu>
         <!-- 2级菜单 Data 数据展示 -->
         <el-submenu index="2-3">
