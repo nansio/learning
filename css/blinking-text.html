@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS实现文字闪烁效果</title>
+  <style>
+    @keyframes changeOpacity {
+      0%{opacity: 1;}
+      30%{opacity: 0.8;}
+      50%{opacity: 0.5;}
+      80%{opacity: 0.3;}
+      100%{opacity: 0;}
+    }
+    @keyframes changeShadow {
+      0%{ text-shadow: 0 0 4px #4cc134;}
+      50%{ text-shadow: 0 0 40px #4cc134;}
+      100%{ text-shadow: 0 0 4px #4cc134;}
+    }
+    @keyframes changeBg {
+      0% { background-position: 0 0;}
+      25% { background-position: 0 0;}
+      26% { background-position: 20px -20px;}
+      50% { background-position: 20px -20px;}
+      51% { background-position: 40px -40px;}
+      75% { background-position: 40px -40px;}
+      76% { background-position: 60px -60px;}
+      99% { background-position: 60px -60px;}
+      100% { background-position: 0 0;}
+    }
+    .opacity-blink{
+      color: #dd4814;
+      animation: changeOpacity 0.5s linear infinite;
+    }
+    .shadown-blink{
+      font-size: 21px;
+      color: #4cc134;
+      animation: changeShadow 0.3s ease-in infinite;
+    }
+    .bg-gradient{
+      display: inline-block;
+      font-size: 18px;
+      background: linear-gradient(left, #f71605, #e0f513);
+      background: -webkit-linear-gradient(left, #f71605, #e0f513);
+      background: -o-linear-gradient(right, #f71605, #e0f513);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: changeBg 0.58s linear forwards infinite;
+    }
+  </style>
+</head>
+<body>
+  <div class="main">
+    <p1 class="opacity-blink">改变透明度渐变闪烁</p1>
+    <hr>
+    <p1 class="shadown-blink">文字阴影闪烁效果</p1>
+    <hr>
+    <p1 class="bg-gradient">背景渐变实现闪烁</p1>
+  </div>
+</body>
+</html>
