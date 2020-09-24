@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文本属性</title>
+  <style>
+    
+    /*
+    * app设置text-align后 span会居中 是因为inherit app的
+    */
+    .align{
+      /* text-align: center; */
+      border: 1px solid saddlebrown;
+    }
+    p{
+      border: 1px solid green;
+    }
+    .align p{
+      text-align: center;
+      width: 500px;
+    }
+    /*
+    * span的text-align不生效 因为text-align只作用与块级元素
+    */
+    span{
+      text-align: center;
+    }
+    center{border: 2px dashed red; width: 500px;}
+    .row{
+      border: 2px solid cyan; height: 80px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="indent" style="width: 500px;">
+      <p style="text-indent: 20px;text-align: left;">
+        段落首行缩进20px 
+        Quia itaque consequatur id animi non minima sunt sed. Quaerat omnis aliquid. 
+        Eveniet hic sit sit. Magnam porro consequatur est voluptatem repellendus. 
+        Ut aut quas et provident et dolorem dicta rem consectetur.
+      </p>
+      <p style="text-indent: 10%;">
+        段落首行缩进10%
+        Rem tempore repellendus. 
+        Quaerat praesentium non esse dolore saepe. Temporibus sed necessitatibus incidunt voluptates ex. 
+        Doloremque qui repellat saepe similique sequi. Illum sunt dolores consequuntur ex quis ab. Deserunt corporis in.
+      </p>
+    </div>
+    <div class="align">
+      <span>span元素设置text-align不生效</span>
+      <p>p元素是块级元素 生效 只是内容居中</p>
+      <center>center标签把整个元素居中 没有啊！</center>
+      <p style="text-align: justify;">
+        两端对齐justify Veritatis mollitia consequatur facilis sit qui. Aspernatur at eum vitae sunt magni consequuntur at asperiores aut.
+        Corrupti consectetur consequatur amet porro aspernatur est veniam. Nostrum quia qui corporis eum.
+        Sunt fuga sunt quas in qui. Quae laborum adipisci doloribus cupiditate enim tenetur officia quisquam. Debitis odit debitis.
+        Minima voluptas reprehenderit. Ipsam assumenda dolorum. Repellat dolores ullam.
+      </p>
+    </div>
+    <div class="lineheight" style="width: 500px; height: 100px; border: 1px dotted blue;">
+       <div class="p" style="line-height: 100px;">line-height属性作用于所有属性 比如这个div</div>
+    </div>
+    <div class="vertical">
+       <p>vertical-align: sub  A<span style="vertical-align: sub; font-size: 10px;">1</span></p>
+       <p>vertical-align: super  X<span style="vertical-align: super; font-size: 10px;">2</span></p>
+       <p style="line-height: 50px; width: 500px;">vertical-align: baseline<img src="./imgs/githju.jpg" alt="" height="30px" style="vertical-align: baseline;"></p>
+       <div class="row">
+        <p style=" float: left; width: 500px; border: 0;">vertical-align: top<img src="./imgs/githju.jpg" alt="" height="30px" style="vertical-align: top;"></p>
+        <p style=" float: left; width: 500px; border: 0;">vertical-align: bottom<img src="./imgs/githju.jpg" alt="" height="30px" style="vertical-align: bottom;"></p>
+        <p style=" float: left; width: 500px; border: 0;">vertical-align: middle<img src="./imgs/githju.jpg" alt="" height="30px" style="vertical-align: middle;"></p>
+       </div>
+       <div class="row">
+        <p style=" float: left; width: 500px; border: 0;">vertical-align: text-top<img src="./imgs/githju.jpg" alt="" height="30px" style="vertical-align: text-top;"></p>
+        <p style=" float: left; width: 500px; border: 0;">vertical-align: text-bottom<img src="./imgs/githju.jpg" alt="" height="30px" style="vertical-align: text-bottom;"></p>
+       </div>
+    </div>
+  </div>
+</body>
+</html>
