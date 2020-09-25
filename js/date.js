@@ -3,6 +3,7 @@
  * 日期时间 => 时间戳
  */
 // 第一种: 使用valueOf()
+console.log('Date转换成Timestamp')
 var timestamp = (new Date()).valueOf()
 console.log(timestamp)
 
@@ -29,9 +30,21 @@ console.log(timestamp)
 
 // 使用 new Date()初始化
 
+console.log('Timestamp转换成Date')
 var date = new Date(timestamp)
 console.log(date.toLocaleString())
 dateStr = new Date().toLocaleString()
 console.log(dateStr);
 
 /******************************************************************* */
+
+/**
+ * Date转换成String的几种格式
+ */
+console.log('Date转换成String的几个函数')
+const now = new Date()
+console.log('toString(): ' + now.toString())
+console.log('toLocaleString(): ' + now.toLocaleString())
+console.log('toUTCString(): ' + now.toUTCString())
+
+
