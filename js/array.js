@@ -111,3 +111,18 @@ console.log(Array.isArray(shun))
 console.log(shun.copyWithin(2,0,2))
 
 console.log(shun.find(item => item > 105))
+
+
+/**
+ * 数组去重的几种方法
+ * duplication removal
+ */
+const duplicatedArr = [2,34,2,34,5,2,1,4,21,2,5]
+console.log(Array.from(new Set(duplicatedArr)))
+console.log([...new Set(duplicatedArr)])
+
+// let tod = []
+// const notdup = duplicatedArr.reduce((prev,cur)=> 
+//   tod.includes(cur) ? tod: [...tod,cur]
+// )
+// console.log(notdup)
