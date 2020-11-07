@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clamp适配</title>
+  <style>
+    .test {
+      width: clamp(300px, 50vw, 800px);
+      height: clamp(300px, 50vw, 800px);
+      border: 3px dashed darkred;
+    }
+    p {
+      font-size: clamp(16px, 5vw, 32px);
+    }
+  </style>
+</head>
+<body>
+  <div class="test">
+    <p>
+      根据窗口大小调整文字字体大小
+    </p>
+  </div>
+</body>
+</html>
