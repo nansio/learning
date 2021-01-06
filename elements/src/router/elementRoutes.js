@@ -1,7 +1,9 @@
+import Content from '../content.vue'
 export const elRoutes = [
   {
     path: '/',
-    redirect: '/basic',
+    component: Content,
+    redirect: '/layout',
     name: 'basic',
     meta: { title: '基础组件', icon: ''},
     children: [
@@ -20,6 +22,7 @@ export const elRoutes = [
   },
   {
     path: '/form',
+    component: Content,
     name: 'El-form',
     redirect: '/form/el-form',
     children: [

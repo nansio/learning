@@ -5,7 +5,7 @@ import { vueRoutes } from './vueRoutes'
 
 Vue.use(VueRouter)
 
-export const constRoutes = [
+export const constantRoutes = [
   ...elRoutes,
   ...vueRoutes
 ]

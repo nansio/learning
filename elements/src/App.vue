@@ -8,7 +8,7 @@
           <el-header class="heady" style="height:30px;">
             supercalifragilistic'expiali'docious
           </el-header>
-          <el-main class="content">
+          <el-main class="contenty">
             <contenty />
           </el-main>
           <el-footer class="footy">
@@ -66,7 +66,7 @@ html,body{
 .mainy{
   /* border: 2px solid purple; */
 }
-.content{
+.contenty{
   margin:0; padding: 0;
 }
 .sideNav{

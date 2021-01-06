@@ -29,7 +29,8 @@
         <el-submenu index="2-2">
             <template slot="title">Form</template>
             <el-menu-item index="3-9">
-              <router-link to="/form">el-form</router-link>
+              <!-- <router-link to="/form">el-form</router-link> -->
+              el-form
             </el-menu-item>
         </el-submenu>
         <!-- 2级菜单 Data 数据展示 -->
