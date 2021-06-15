@@ -31,3 +31,5 @@ console.log(Math.log(Math.E))
 console.log(Math.sqrt(100))
 
 console.log(Math.valueOf({value: 123}));
+
+console.log(Number.EPSILON)
