@@ -25,3 +25,8 @@ let game = {
 }
 
 console.log(game)
+
+//  es10 - Symbol.prototype.description
+
+let sss = Symbol('描述信息')
+console.log(sss.description)
