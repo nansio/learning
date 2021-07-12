@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <article>
+    <div class="blue"></div>
+    <div class="green"></div>
+  </article>
+
+  <script type="text/javascript" src="js/anime.min.js"></script>
+  <script>
+    const myAnimation = anime({
+      targets: ['.blue', '.green'],
+      translateX: '13rem',
+      rotate: 180,
+      borderRadius: 8,
+      duration: 2000,
+      loop: true
+    });
+  </script>
+</body>
+</html>
