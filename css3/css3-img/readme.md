@@ -16,13 +16,13 @@
 ```
 可选值：
 
-- `filter: blur(4px);`
-- `filter: brightness(200%);`
-- `filter: contrast(150%);`
-- `filter: grayscale(100%);`
+- `filter: blur(4px);` 模糊
+- `filter: brightness(200%);` 明亮
+- `filter: contrast(150%);` 高对比
+- `filter: grayscale(100%);` 灰度图
 - `filter: hue-rotate(180deg);`
-- `filter: invert(100%);`
-- `filter: opacity(50%);`
+- `filter: invert(100%);` 反转
+- `filter: opacity(50%);` 透明
 - `filter: saturate(7);`
-- `filter: sepia(100%);`
-- `filter: drop-shadow(8px 8px 10px green);`
+- `filter: sepia(100%);` 深褐色
+- `filter: drop-shadow(8px 8px 10px green);` 阴影

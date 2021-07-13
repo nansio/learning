@@ -10,23 +10,35 @@
       margin: 0; padding: 0;
       box-sizing: border-box;
     }
-    .img-container, .filtered{
-      width: 50%; height: auto;
+    .img-container{
+      width: 100%; height: auto;
       margin-bottom: 10px;
     }
     .img-filter{
+      width: 100%;
       display: flex; flex-flow: row wrap;
-      justify-content: space-between;
+      justify-content: flex-start;
       align-items: flex-start; align-content: flex-start;
     }
-    .img, .filtered>img{
-      max-width: 50%;
+    #robot{
+      width: 100%;
+      height: auto;
+    }
+    #robot, .f-img{
+      width: 100%;
       height: auto;
       /* 以下样式用于绘制缩略图 */
       border: 1px solid #ddd; border-radius: 4px; padding: 5px;
     }
+    .filtered{
+      width: calc(25% - 15px);
+      margin-bottom: 10px; margin-right: 5px;
+    }
+    .filtered h5{
+      text-align: center;
+    }
     /* 滤镜样式 */
-    .blur {-webkit-filter: blur(4px);filter: blur(1px);}
+    .blur {-webkit-filter: blur(4px);filter: blur(2px);}
     .brightness {-webkit-filter: brightness(150%);filter: brightness(150%);}
     .contrast {-webkit-filter: contrast(200%);filter: contrast(200%);}
     .grayscale {-webkit-filter: grayscale(100%);filter: grayscale(100%);}
@@ -39,43 +51,55 @@
   </style>
 </head>
 <body>
+  <h1>自适应图片</h1>
   <div class="img-container">
-    <img class="img" src="../assets/images/robot-meditate.jpg" alt="机器人冥想图">
+    <img id="robot" src="../assets/images/robot-meditate.jpg" alt="机器人冥想图">
   </div>
   <h1>给图片添加滤镜</h1><br>
   <div class="img-filter">
     <div class="filtered">
-      <img src="../assets/images/beach.jpg" alt="原图" title="原图">
+      <img class="f-img" src="../assets/images/beach.jpg" alt="原图" title="原图">
+      <h5>原图</h5>
     </div>
     <div class="filtered">
-      <img class="blur" src="../assets/images/beach.jpg" alt="模糊" title="模糊">
+      <img class="blur f-img" src="../assets/images/beach.jpg" alt="模糊" title="模糊">
+      <h5>模糊</h5>
     </div>
     <div class="filtered">
-      <img class="brightness" src="../assets/images/beach.jpg" alt="明亮" title="明亮">
+      <img class="brightness f-img" src="../assets/images/beach.jpg" alt="明亮" title="明亮">
+      <h5>明亮</h5>
     </div>
     <div class="filtered">
-      <img class="contrast" src="../assets/images/beach.jpg" alt="高对比" title="高对比">
+      <img class="contrast f-img" src="../assets/images/beach.jpg" alt="高对比" title="高对比">
+      <h5>高对比</h5>
     </div>
     <div class="filtered">
-      <img class="grayscale" src="../assets/images/beach.jpg" alt="灰度图" title="灰度图">
+      <img class="grayscale f-img" src="../assets/images/beach.jpg" alt="灰度图" title="灰度图">
+      <h5>灰度图</h5>
     </div>
     <div class="filtered">
-      <img class="huerotate" src="../assets/images/beach.jpg" alt="huerotate" title="huerotate">
+      <img class="huerotate f-img" src="../assets/images/beach.jpg" alt="huerotate" title="huerotate">
+      <h5>huerotate</h5>
     </div>
     <div class="filtered">
-      <img class="invert" src="../assets/images/beach.jpg" alt="反转" title="反转">
+      <img class="invert f-img" src="../assets/images/beach.jpg" alt="反转" title="反转">
+      <h5>反转</h5>
     </div>
     <div class="filtered">
-      <img class="opacity" src="../assets/images/beach.jpg" alt="透明度" title="透明度">
+      <img class="opacity f-img" src="../assets/images/beach.jpg" alt="透明度" title="透明度">
+      <h5>透明度</h5>
     </div>
     <div class="filtered">
-      <img class="saturate" src="../assets/images/beach.jpg" alt="饱和" title="饱和">
+      <img class="saturate f-img" src="../assets/images/beach.jpg" alt="饱和" title="饱和">
+      <h5>饱和</h5>
     </div>
     <div class="filtered">
-      <img class="sepia" src="../assets/images/beach.jpg" alt="深褐色" title="深褐色">
+      <img class="sepia f-img" src="../assets/images/beach.jpg" alt="深褐色" title="深褐色">
+      <h5>深褐色</h5>
     </div>
     <div class="filtered">
-      <img class="shadow" src="../assets/images/beach.jpg" alt="阴影" title="阴影">
+      <img class="shadow f-img" src="../assets/images/beach.jpg" alt="阴影" title="阴影">
+      <h5>阴影</h5>
     </div>
   </div>
 </body>
