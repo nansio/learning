@@ -1,0 +1,27 @@
+*{
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+}
+
+h1{
+  text-align: center;
+}
+
+.card{
+  border: 1px solid #ddd;
+  min-height: 300px;
+}
+
+.card-title{
+  font-size: 16px;
+  border-bottom: 1px solid #ddd;
+  padding: 8px;
+}
+
+.link-list{
+  padding: 8px;
+}
+
+.link-list ul{
+  list-style: square inside url('./css3/assets/images/right_arrow_green.svg');
+}

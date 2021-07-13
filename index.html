@@ -1,29 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./test.css">
-    <title>Document</title>
-    <style>
-        #show{
-            width: 300px; height: 300px; background-color: chartreuse;
-            border: 2px solid brown;
-        }
-    </style>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./libs/bootstrap-3.4.1-dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./index.css">
+	<title>Demo index page</title>
 </head>
 <body>
-    <span id="btn">显示div</span>
-    <div id="show"></div>
-    <div class="msgc">
-        <a href="javascript:;" class="nav">我的消息</a>
-        <div class="menulist">
-            <a href="javascript:;">我的回答</a>
-            <a href="javascript:;">我的私信</a>
-            <a href="javascript:;">我的订单</a>
-            <a href="javascript:;">我的关注</a>
-            <a href="javascript:;">我的收藏</a>
-        </div>
-    </div>
+	<header>
+		<h1>Index Page for Demos</h1>
+		<hr>
+	</header>
+	<div class="container">
+		<div class="row">
+			<div class="card col-md-3 col-sm-6 col-xs-12">
+				<div class="card-title">
+					CSS3
+				</div>
+				<div class="link-list">
+					<ul>
+						<li><a href="./css3/media-query/demo.html">media query</a></li>
+						<li><a href="./css3/flex-box/demo.html">flex box</a></li>
+						<li><a href="./css3/resize.html">resize div</a></li>
+						<li><a href="./css3/3d_album.html">3d_album</a></li>
+						<li><a href="./css3/blinking-text.html">blinking text</a></li>
+						<li><a href="./css3/dropdown-submenu.html">dropdown-submenu</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="card col-md-3 col-sm-6 col-xs-12">
+				<div class="card-title">
+					JavaScript
+				</div>
+			</div>
+			<div class="card col-md-3 col-sm-6 col-xs-12">
+				<div class="card-title">
+					HTML5
+				</div>
+			</div>
+			<div class="card col-md-3 col-sm-6 col-xs-12">
+				<div class="card-title">
+					Others
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
