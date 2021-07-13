@@ -19,12 +19,14 @@
       align-content: center;
       height: 100vh; width: 100vw;
       border: 2px dashed red;
+      /* 通过设置父元素的 margin-bottom 为负的相应值抵消最后一行的 margin-bottom */
       margin-bottom: -15px;
     }
     .item{
       width: calc(25% - 15px); height: 200px;
       border: 1px solid gray;
       text-align: center; line-height: 200px;
+      /* 设置行与行之间的间隔 margin-bottom  */
       margin-bottom: 15px;
     }
   </style>

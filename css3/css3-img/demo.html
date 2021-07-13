@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Images</title>
+  <style>
+    *{
+      margin: 0; padding: 0;
+      box-sizing: border-box;
+    }
+    .img-container, .filtered{
+      width: 50%; height: auto;
+      margin-bottom: 10px;
+    }
+    .img-filter{
+      display: flex; flex-flow: row wrap;
+      justify-content: space-between;
+      align-items: flex-start; align-content: flex-start;
+    }
+    .img, .filtered>img{
+      max-width: 50%;
+      height: auto;
+      /* 以下样式用于绘制缩略图 */
+      border: 1px solid #ddd; border-radius: 4px; padding: 5px;
+    }
+    /* 滤镜样式 */
+    .blur {-webkit-filter: blur(4px);filter: blur(1px);}
+    .brightness {-webkit-filter: brightness(150%);filter: brightness(150%);}
+    .contrast {-webkit-filter: contrast(200%);filter: contrast(200%);}
+    .grayscale {-webkit-filter: grayscale(100%);filter: grayscale(100%);}
+    .huerotate {-webkit-filter: hue-rotate(180deg);filter: hue-rotate(180deg);}
+    .invert {-webkit-filter: invert(100%);filter: invert(100%);}
+    .opacity {-webkit-filter: opacity(50%);filter: opacity(50%);}
+    .saturate {-webkit-filter: saturate(7); filter: saturate(7);}
+    .sepia {-webkit-filter: sepia(100%);filter: sepia(100%);}
+    .shadow {-webkit-filter: drop-shadow(8px 8px 10px green);filter: drop-shadow(8px 8px 10px green);}
+  </style>
+</head>
+<body>
+  <div class="img-container">
+    <img class="img" src="../assets/images/robot-meditate.jpg" alt="机器人冥想图">
+  </div>
+  <h1>给图片添加滤镜</h1><br>
+  <div class="img-filter">
+    <div class="filtered">
+      <img src="../assets/images/beach.jpg" alt="原图" title="原图">
+    </div>
+    <div class="filtered">
+      <img class="blur" src="../assets/images/beach.jpg" alt="模糊" title="模糊">
+    </div>
+    <div class="filtered">
+      <img class="brightness" src="../assets/images/beach.jpg" alt="明亮" title="明亮">
+    </div>
+    <div class="filtered">
+      <img class="contrast" src="../assets/images/beach.jpg" alt="高对比" title="高对比">
+    </div>
+    <div class="filtered">
+      <img class="grayscale" src="../assets/images/beach.jpg" alt="灰度图" title="灰度图">
+    </div>
+    <div class="filtered">
+      <img class="huerotate" src="../assets/images/beach.jpg" alt="huerotate" title="huerotate">
+    </div>
+    <div class="filtered">
+      <img class="invert" src="../assets/images/beach.jpg" alt="反转" title="反转">
+    </div>
+    <div class="filtered">
+      <img class="opacity" src="../assets/images/beach.jpg" alt="透明度" title="透明度">
+    </div>
+    <div class="filtered">
+      <img class="saturate" src="../assets/images/beach.jpg" alt="饱和" title="饱和">
+    </div>
+    <div class="filtered">
+      <img class="sepia" src="../assets/images/beach.jpg" alt="深褐色" title="深褐色">
+    </div>
+    <div class="filtered">
+      <img class="shadow" src="../assets/images/beach.jpg" alt="阴影" title="阴影">
+    </div>
+  </div>
+</body>
+</html>
