@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resizing div</title>
+  <style>
+    *{
+      margin: 0; padding: 0;
+      box-sizing: border-box;
+    }
+    body{
+      display: flex;height: 100vh;
+    }
+    .resizable{
+      height: 500px; width: 500px; margin: auto;
+      background-color: brown; color: aliceblue;
+      /* 下述两个必须同时声明才有用 */
+      resize: both; overflow: auto;
+      /* resize 属性可指定元素是否可由用户调整大小 */
+      text-align: center;
+    }
+    /* div & button is resizable, img is not!  */
+    button{
+      resize: both; overflow: auto;
+      width: 120px; height: 50px;
+    }
+  </style>
+</head>
+<body>
+  <div class="resizable">
+    <button>按钮</button>
+  </div>
+</body>
+</html>
