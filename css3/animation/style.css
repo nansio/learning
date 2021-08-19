@@ -1,0 +1,12 @@
+@keyframes changeColor {
+  0% { background-color: red;}
+  25% {background-color: yellow;}
+  50% {background-color: blue;}
+  100% {background-color: green;}
+}
+
+.panel{
+  animation: changeColor 5s linear 2s infinite alternate;
+  height: 300px;
+  width: 300px;
+}
