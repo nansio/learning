@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>长列表性能</title>
+  <style>
+    .item {
+        position: relative;
+        overflow: hidden;
+        transition-duration: 0.3s;
+        margin-bottom: 10px;
+        width: 200px;
+        height: 100px;
+        background-color: #ffaa00;
+        content-visibility: auto;
+        contain-intrinsic-size: 100px;
+        /* 该属性用以控制懒加载元素预设高度 */
+      }
+      .item:before {
+        content: '';
+        position: absolute;
+        left: -665px;
+        top: -460px;
+        width: 300px;
+        height: 15px;
+        background-color: rgba(255, 255, 255, 0.5);
+        transform: rotate(-45deg);
+        animation: searchLights 2s ease-in 0s infinite;
+      }
+      @keyframes searchLights {
+        0% {
+        }
+        75% {
+          left: -100px;
+          top: 0;
+        }
+        100% {
+          left: 120px;
+          top: 100px;
+        }
+      } 
+  </style>
+</head>
+<body>
+  <script>
+    const body = document.querySelector('body');
+    for(let i = 0; i < 100; i++) {
+      const div = document.createElement('div');
+      div.classList.add('item')
+      body.appendChild(div);
+    }
+  </script>
+</body>
+</html>
