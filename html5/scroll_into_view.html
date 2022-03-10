@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .big-box{
+      height: 1000px; width: 100%;
+      background-color: #3d3a1a;
+    }
+    #the-box{
+      color: red; font-size: 21px; font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="big-box">
+    <button id="btn">下滑</button>
+  </div>
+  <div id="the-box">
+    you should see me, if you pushed the button above
+  </div>
+  <script>
+    var btn = document.getElementById('btn');
+    var theBox = document.getElementById('the-box');
+    btn.addEventListener('click', function() {
+      theBox.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+        inline: 'nearest'
+      });
+    });
+  </script>
+</body>
+</html>
