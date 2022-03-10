@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* *{
+      box-sizing: border-box;
+    } */
+    body{
+      height: 100vh; width: 100vw;
+      margin: 0;
+      border: 8px dashed #999;
+      /* padding: 100px; */
+    }
+    .border-box{
+      height: 0px; width: 0px;
+      border-top: 200px solid yellow;
+      border-right: 200px solid green;
+      border-bottom: 200px solid red;
+      border-left: 200px solid blueviolet;
+      animation: rotate 3s ease-in infinite;
+      position: relative;
+      left: -125px;
+      top: -125px;
+    }
+    @keyframes rotate {
+      to {
+        transform: rotate(1turn);
+      }
+    }
+    .container-box{
+      position: relative;
+      width: 150px;
+      height: 150px;
+      margin: 300px auto;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+    .content{
+      position: absolute;
+      top: 0px;
+      margin: 10px;
+      background-color: white;
+      width: 130px; height: 130px;
+      line-height: 130px; text-align: center;
+      /* border-radius: 50%; */
+    }
+  </style>
+</head>
+<body>
+  <div class="container-box">
+    <div class="border-box"></div>
+    <div class="content">
+      这里是内容
+    </div>
+  </div>
+</body>
+</html>
