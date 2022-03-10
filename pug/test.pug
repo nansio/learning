@@ -1,0 +1,101 @@
+doctype html
+
+head
+
+body
+
+  a(class='button' href='//google.com') Google
+
+  - var authed = true
+  p(class=authed ? 'authed' : 'anon') I can barely keep my eyes open!
+
+  input(
+    type='text',
+    placeholder='Search',
+    autofocus=true,
+    autocomplete='off'
+  )
+
+
+  input(data-json=`
+    {
+      'very-long': 'string',
+      'data': true
+    }
+  `)
+
+  div(class='div-class', (click)='play()')
+
+
+  - let url = 'pug-test.html'
+
+  a(href='/' + url) Link
+  
+  br
+
+  a(href=`/${url}`) Same Link
+
+
+  div(escaped="<code>")
+  div(escaped!="<code>")
+
+  p(style={color: 'red', 'font-size': '21px'}) 这是一段用了style的p
+
+  p(style='color: white; background: green;') 使用字符串做style做属性值
+
+
+  - const classes = ['foo', 'bar', 'baz']
+
+  a(class=classes) class数组
+
+  a(class={'foo': 1+1 == 2, 'bar': false, 'baz': true}) class对象
+
+  .content
+    a.button foo
+    a#unique bar
+
+
+    - const attributes = {}
+    - attributes.class = 'baz'
+    div#foo(data-bar='fff')&attributes(attributes) 234
+
+  .case-block
+    - const friends = 6
+    case friends 
+      when 0
+        p you have no friends
+      when 1
+      when 2
+      when 3: p you have few friends
+      when 10: p you have a lot of friends
+      when 999: -break
+      default: p you have #{friends} friends
+
+  .code 
+    .unbuffered-code 
+      ul
+        - for (let i = 0; i < 3; i++)
+          li=`item ${i}`
+      ol
+        -
+          const list = ['Unos', 'Dos', 'Tres', 'Cuatro', 'Cinco', 'Seis']
+        each item in list
+          li= item
+    .buffered-code
+      p='buffered code starts with = and is first HTML escaped, <escaped>'
+      .unescaped-buffered-code
+        p!= 'This code is <strong>not</strong> escaped!'
+
+  // here is the single line comments
+  //- unbuffered comments only appears on the pug code, will not be rendered in HTML
+
+  //
+    Multiline comments 
+    this is the second line 
+  //-
+    Multiline comments in pug file
+    second line
+
+  // dont wanna care about conditional comments
+
+  
