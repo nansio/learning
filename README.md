@@ -1,7 +1,1 @@
-包含内容：
-
-1. qrCode: 根据文字生成二维码
-2. html5
-3. css3
-4. vue
-5. web components
+仓库包含开发学习过程中遇到的问题及解法
