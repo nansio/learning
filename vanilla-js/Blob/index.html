@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="btn">ClickMe</button>
+  <script>
+    let btn = document.getElementById('btn');
+    btn.addEventListener('click', function(){
+      let ab = new ArrayBuffer(2)
+      let dataView = new DataView(ab)
+      dataView.setInt8(0, 104)
+      dataView.setInt8(1, 105)
+      console.log(dataView.getInt8(0))
+      
+      let blob = new Blob([ab])
+      console.log('blob: ', blob);
+      
+      let file = new File([blob], 'myinfo.txt', { type: 'text/plain'})
+      console.log('file: ', file);
+      
+      let url = URL.createObjectURL(file)
+      console.log('url: ', url);
+      
+      let a = document.createElement('a')
+      a.href = url
+      a.download = file.name
+      a.textContent = `Download ${file.name}`
+      document.body.appendChild(a)
+    })
+  </script>
+</body>
+</html>
